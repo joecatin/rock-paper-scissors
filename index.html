@@ -10,11 +10,96 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
+        <div class="hands">
+
+            <div id="rock" sound-key="kick" class="hand">
+                <img src="assets/images/hand-rock-player.png" alt="rock"/>
+            </div>
+            <div id="paper" sound-key="boom" class="hand">
+                <img src="assets/images/hand-paper-player.png" alt="paper"/>
+            </div>
+            <div id="scissors" sound-key="tink" class="hand">
+                <img src="assets/images/hand-scissors-player.png" alt="scissors"/>
+            </div>
         
+        </div>
+
+        <div class="game">
+
+            <div id="player">
+                <img src="assets/images/hand-start-player.png" alt="rock"/>
+            </div>
+
+            <div id="vs">
+                <img src="assets/images/lightening-player-computer.png" alt="paper"/>
+            </div>
+
+            <div id="computer">
+                <img src="assets/images/hand-start-computer.png" alt="paper"/>
+            </div>
+        
+        </div>
+        
+        <div class="scores">
+
+            <div id="set">
+                <div id="set-box">
+                    <div id="computer" class="score">
+                        <span id="label">computer</span>
+                        <span id="value">0</span>
+                    </div>
+                    <div id="player" class="score">
+                        <span id="label">player</span>  
+                        <span id="value">0</span>  
+                    </div>    
+                    <div id="draw" class="score">
+                        <span id="label">draw</span>  
+                        <span id="value">0</span>  
+                    </div>
+                </div>                         
+            </div>
+
+            <div id="round"></div>
+        
+        </div>
+
+        <audio id="kick" src="assets/sounds/kick.wav"></audio>
+        <audio id="boom" src="assets/sounds/boom.wav"></audio>
+        <audio id="tink" src="assets/sounds/tink.wav"></audio>
+
+        <!-- <script>
+            let playSound = (e) => {
+                
+                const audio = document.querySelector(`audio[id="${e.path[1].attributes["sound-key"].value}"]`);
+                const hand = document.querySelector(`div[id="${e.path[1].attributes["id"].value}"]`);
+                console.log(audio);
+
+                if (!audio) return;
+
+                audio.currentTime = 0;
+                audio.play();   
+                
+                hand.classList.add("playing");
+
+
+            }
+
+            let removeTransition = (hand) => { hand.classList.remove(("playing")); }
+
+            let hands = document.querySelectorAll(".hand");
+
+            hands.forEach(hand => {
+                hand.addEventListener("click", playSound)
+            }); 
+
+            hands.forEach(hand => {
+                hand.addEventListener("transitionend", function(e){ removeTransition(this) })
+            }); 
+        </script> -->
         <script src="scripts.js" async defer></script>
     </body>
 </html>

@@ -1,0 +1,120 @@
+:root {
+    --player: #ff7474;
+    --computer: #ffc600;
+  }
+
+html {
+    font-size: 10px;
+    background: url('./assets/images/background-hand.jpg') bottom center;
+    background-size: cover;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.hands, .game, .scores {
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh / 3);
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.hand {
+    border: .4rem solid var(--computer);
+    border-radius: 1rem;
+    margin: 5rem;
+    font-size: 1.5rem;
+    padding: 1rem .5rem;
+    transition: all .07s ease;
+    width: 10rem;
+    text-align: center;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    text-shadow: 0 0 .5rem black;
+}
+
+.selected {
+    width: 20rem;
+    height: 20rem;
+}
+
+.playing {
+    transform: scale(1.1);
+    border-color: var(--player);
+    box-shadow: 0 0 1rem var(--player);
+}
+
+.game {
+    align-items: center;
+}
+
+.scores {
+    align-items: flex-start;
+    font-size: 50px;
+}
+
+.scores > div {
+    width: 50vw;
+}
+
+#set {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#set > div {
+    width: 30rem;
+}
+
+#round {
+    box-sizing: border-box;
+    padding-left: 50px;
+}
+
+#round #left {
+color: var(--computer);
+}
+
+#round #right {
+    color: var(--player);
+    }
+
+.scores #computer {
+    color: var(--computer);
+}
+
+.scores #player {
+    color: var(--player);
+}
+
+.scores #draw #label {
+    color: var(--computer);
+}
+
+.scores #draw #value {
+    color: var(--player);
+}
+
+.score {
+    display: flex;
+    justify-content: space-between;
+}
+
+.score #label {
+    margin-right: 50px;    
+}
+
+.blink {
+    animation: blinker .75s linear infinite;
+}
+  
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
