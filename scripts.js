@@ -269,7 +269,7 @@ playGame = (e) => {
   let computerHand = computerPlay();
   let result = playRound(playerHand, computerHand);
 
-  showHands(playerHand, computerHand);
+  showHands(playerHand.toLowerCase(), computerHand.toLowerCase());
 
   updateScore(result);
   results.push(result);
