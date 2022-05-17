@@ -296,7 +296,7 @@ let playSound = (e) => {
   hand.classList.add("playing");
 }
 
-let removeTransition = (hand) => { hand.classList.remove(("playing")); }
+let removeTransition = (hand) => { hand.classList.remove("playing"); }
 
 let hands = document.querySelectorAll(".hand");
 
